@@ -1,0 +1,61 @@
+@import url('./normalize.css');
+
+:root {
+  --default-text: #2d2d2d;
+  --orange: #ff9c46;
+  --dark-blue: #05303d;
+  --grayFC: #fcfcfc;
+  --gray90: #909090;
+  --disabled: #EDD0B6;
+  --error: #DF4C25;
+  --green: #2A8F55;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--default-text);
+  line-height: normal;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  background: url('/images/bgImage.jpg') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

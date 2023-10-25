@@ -1,0 +1,33 @@
+.loader {
+  display: flex;
+  flex-direction: row;
+}
+
+.loaderSpan:not(:last-child) {
+  margin-right: 14px;
+}
+
+.loaderSpan {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: block;
+  left: 10px;
+  margin: 5px auto;
+  position: relative;
+  color: var(--grayFC);
+  box-sizing: border-box;
+  animation: loader 1s linear infinite alternate;
+}
+
+@keyframes loader {
+  0% {
+    box-shadow: -38px -12px, -14px 0px,  14px 0px;
+  }
+  50% {
+    box-shadow: -38px 0px, -14px -12px, 14px 0px;
+  }
+  100% {
+    box-shadow: -38px 0px, -14px 0px, 14px -12px;
+  }
+}

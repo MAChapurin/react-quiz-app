@@ -1,0 +1,70 @@
+.label {
+	display: block;
+  position: relative;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.input {
+  margin-top: 8px;
+	height: 56px;
+	width: 100%;
+	padding: 16px 75px 16px 16px;
+	border: 2px solid var(--dark-blue);
+	border-radius: 10px;
+  transition: all .5s ease;
+}
+
+.tooltip {
+	display: block;
+	margin-top: 8px;
+	color: var(--gray90);
+	font-weight: 500;
+  font-size: 16px;
+	line-height: 1.25;
+}
+
+.input.red {
+  border-color: var(--error);
+}
+
+.tooltip.red {
+  color: var(--error);
+}
+
+input.green {
+  border-color: var(--green);
+}
+
+.tooltip.green {
+  color: var(--green);
+}
+
+.inputBtns {
+  position: absolute;
+  right: 18px;
+  top: 47px;
+  display: flex;
+  flex-direction: row;
+}
+
+.clearBtn {
+  display: none;
+  transition: all .5s ease;
+}
+
+.showInput {
+  display: none;
+  margin-left: 8px;
+}
+
+.input:valid ~ div div {
+  display: block;
+}
+
+.input:valid ~ div button {
+  display: block;
+}
+
+

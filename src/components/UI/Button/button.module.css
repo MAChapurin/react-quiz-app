@@ -1,0 +1,37 @@
+.btn {
+	max-width: 304px;
+	padding: 20px 24px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.2;
+	color: var(--grayFC);
+	text-align: center;
+	background: var(--orange);
+  transition: all .5s ease;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--disabled);
+}
+
+.btn:disabled ~ span {
+  color: var(--gray90);
+}
+
+.tip {
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+  color: var(--default-text);
+}
+
+.tip span {
+  font-weight: 700;
+}
+
+.btn:disabled .tip {
+  color: var(--tip-disabled);
+}
