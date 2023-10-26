@@ -6,6 +6,8 @@ import { useAppSelector } from './hooks/tolkitHooks';
 import { Login, NotFound, Themes } from '@/pages';
 
 import styles from './App.module.css';
+import { Main } from './pages/Main/Main';
+
 
 const App = () => {
   const user = useAppSelector(state => state.auth.user)
@@ -23,9 +25,10 @@ const App = () => {
         <Route path='/' element={user ? <Navigate to="/themes" /> : <Login />} />
         {user && <>
           <Route path='/themes' element={<Themes />} />
+          <Route path='/main' element={<Main/>} />
         </>}
-        {/* <Route path='/not-found' element={<NotFound />} /> */}
-        <Route path='*' element={<NotFound />} />
+        <Route path='/not-found' element={<NotFound />} />
+        <Route path='*' element={<Navigate to="/not-found"/>} />
       </Routes>
       <div>
       </div>

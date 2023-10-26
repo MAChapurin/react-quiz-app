@@ -56,6 +56,11 @@ export const authSlice = createSlice({
 			sessionStorage.clear();
       localStorage.clear();
 		},
+    addQuiz: (state, action) => {
+      if(state.user) {
+        state.user.quizzes = action.payload
+      }
+    }
 	},
 	extraReducers: (builder) => {
 		builder
@@ -78,5 +83,5 @@ export const authSlice = createSlice({
 	},
 });
 
-export const { logoutUser } = authSlice.actions
+export const { logoutUser, addQuiz } = authSlice.actions
 export default authSlice.reducer

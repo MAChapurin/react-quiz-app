@@ -1,4 +1,5 @@
 .btn {
+	position: relative;
 	max-width: 304px;
 	padding: 20px 24px;
 	border-radius: 10px;
@@ -8,30 +9,44 @@
 	color: var(--grayFC);
 	text-align: center;
 	background: var(--orange);
-  transition: all .5s ease;
+	transition:
+		color 0.5s ease,
+		background 0.5s ease;
 }
 
+/* .btn span {
+  transition:
+		color 0.5s ease;
+} */
+
 .btn:disabled {
-  cursor: not-allowed;
-  background-color: var(--disabled);
+	cursor: not-allowed;
+	background-color: var(--disabled);
 }
 
 .btn:disabled ~ span {
-  color: var(--gray90);
+	color: var(--gray90);
 }
 
 .tip {
+	position: absolute;
+	top: 75px;
+	left: 50%;
+	transform: translateX(-50%);
 	font-size: 10px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-  color: var(--default-text);
+	color: var(--default-text);
+	white-space: nowrap;
+  transition:
+		color 0.5s ease;
 }
 
 .tip span {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .btn:disabled .tip {
-  color: var(--tip-disabled);
+	color: var(--tip-disabled);
 }

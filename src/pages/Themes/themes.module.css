@@ -1,4 +1,74 @@
-.link {
-  margin: 0 auto;
-  display: inline-block;
+.container {
+  width: 100%;
+  max-width: 1132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 40px 24px;
+  background-color: var(--white);
+  border-radius: 10px;
+  min-width: 656px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 11px;
+}
+
+.logo {
+  justify-self: start;
+  width: 100px;
+  height: min-content;
+  padding-bottom: 13px;
+  animation-duration: 0.5s;
+  animation-name: appearingLogo;
+}
+
+.logo svg {
+  width: 92px;
+  height: 38px;
+}
+
+.h2 {
+  width: 100%;
+  padding-right: 91px;
+  padding-top: 2px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  animation-duration: 0.5s;
+  animation-name: appearing;
+}
+
+.list {
+  margin-bottom: 27px;
+}
+
+.btn {
+  width: 100%;
+  max-width: 304px;
+}
+
+@keyframes appearing {
+  from {
+    transform: translateX(1000px)
+  }
+
+  to {
+   transform: translateX(0);
+  }
+}
+
+@keyframes appearingLogo {
+  from {
+    opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
 }

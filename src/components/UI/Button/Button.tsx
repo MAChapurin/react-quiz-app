@@ -3,7 +3,8 @@ import styles from './button.module.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   tip?: string;
-  disabled?: boolean
+  disabled?: boolean;
+  // shortcut?: string
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -21,8 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...otherProps}
     >
 			{children}
-		</button>
-    {tip &&
+      {tip &&
       <span className={styles.tip}>
         или нажми
         <span>
@@ -30,6 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
         </span>
       </span>
     }
+		</button>
     </>
 	);
 };
