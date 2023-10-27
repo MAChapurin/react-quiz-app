@@ -1,14 +1,16 @@
 .container {
   width: 100%;
   max-width: 1132px;
+  min-height: 656px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px 40px 24px;
-  background-color: var(--white);
+  padding: 32px 40px 42px;
+  background-color: var(--grayFC);
   border-radius: 10px;
-  min-width: 656px;
+  transition: height 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 
 .header {
@@ -23,12 +25,16 @@
   height: min-content;
   padding-bottom: 13px;
   animation-duration: 0.5s;
-  animation-name: appearingLogo;
+  animation-name: appearingBottom;
 }
 
 .logo svg {
   width: 92px;
   height: 38px;
+}
+
+.logo svg path {
+  fill: orange;
 }
 
 .h2 {
@@ -41,7 +47,7 @@
   line-height: 40px;
   text-align: center;
   animation-duration: 0.5s;
-  animation-name: appearing;
+  animation-name: appearingBottom;
 }
 
 .list {
@@ -51,6 +57,8 @@
 .btn {
   width: 100%;
   max-width: 304px;
+  animation-duration: 1s;
+  animation-name: appearingBottom;
 }
 
 @keyframes appearing {
@@ -70,5 +78,17 @@
 
   to {
    opacity: 1;
+  }
+}
+
+@keyframes appearingBottom {
+  from {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
