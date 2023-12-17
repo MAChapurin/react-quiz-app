@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-
-type EventType =
 export const useResize = () => {
   const [width, setWidth] = useState(window.innerWidth)
 

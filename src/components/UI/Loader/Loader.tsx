@@ -1,4 +1,4 @@
-import clsx from "@/utils/clsx"
+import clsx from "@/utils/cl"
 import styles from './loader.module.css'
 
 interface LoaderProps extends React.HTMLAttributes<HTMLDivElement> {

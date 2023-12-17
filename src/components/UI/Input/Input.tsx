@@ -1,4 +1,4 @@
-import clsx from '@/utils/clsx';
+import clsx from '@/utils/cl';
 import styles from './input.module.css';
 import ClearInput from '@/components/icons/ClearInput';
 import EyeInput from '@/components/icons/EyeInput';

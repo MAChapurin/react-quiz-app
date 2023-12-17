@@ -30,21 +30,22 @@ export function ThemeItem({ name, quizzes, ...props }: IThemeItem) {
   }
 
   return (
-    <li
-      onClick={handleClick}
-      className={cn(styles.li,
-        {
-          [styles.isChecked]: isChecked,
-        }
-      )}
-      style={{ backgroundImage: `url(/images/themes/${name}.png)` }}
-      {...props}>
-      <h3 className={styles.h3}>
-        {name}
-      </h3>
-      {isChecked
-        &&
-        <CheckedIcon className={styles.icon} />}
-    </li>
+    <li className={styles.li}>
+      <button
+        className={cn(styles.btn,
+          {
+            [styles.isChecked]: isChecked,
+          }
+        )}
+        style={{ backgroundImage: `url(/images/themes/${name}.png)` }}
+        {...props} onClick={handleClick}>
+        <h3 className={styles.h3}>
+          {name}
+          {isChecked
+            &&
+            <CheckedIcon className={styles.icon} />}
+        </h3>
+      </button>
+    </li >
   )
 }

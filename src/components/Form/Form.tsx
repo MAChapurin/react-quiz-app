@@ -5,7 +5,7 @@ import { login } from '@/store/slices/authSlice';
 
 import { Button, Input, Loader } from '@/components/UI';
 
-import clsx from '@/utils/clsx';
+import clsx from '@/utils/cl';
 import styles from './form.module.css';
 import { isValidName, isValidPassword } from '@/utils';
 import { useSystemHook } from '@/hooks/useSystemHook';

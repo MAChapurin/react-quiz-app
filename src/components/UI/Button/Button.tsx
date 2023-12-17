@@ -1,4 +1,4 @@
-import clsx from '@/utils/clsx';
+import clsx from '@/utils/cl';
 import styles from './button.module.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
