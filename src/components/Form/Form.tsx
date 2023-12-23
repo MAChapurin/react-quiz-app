@@ -5,7 +5,7 @@ import { login } from '@/store/slices/authSlice';
 
 import { Button, Input, Loader } from '@/components/UI';
 
-import clsx from '@/utils/cl';
+import { cn } from '@/utils/cl';
 import styles from './form.module.css';
 import { isValidName, isValidPassword } from '@/utils';
 import { useSystemHook } from '@/hooks/useSystemHook';
@@ -24,10 +24,10 @@ export const Form: React.FC<FormProps> = ({ className, ...otherProps }) => {
   const error = useAppSelector(state => state.auth.error)
 
   useEffect(() => {
-    if (name.length >= 1 && password.length >=1) {
+    if (name.length >= 1 && password.length >= 1) {
       setDisabled(false)
 
-      if(loading) {
+      if (loading) {
         setDisabled(true)
       } else {
         setDisabled(false)
@@ -39,7 +39,7 @@ export const Form: React.FC<FormProps> = ({ className, ...otherProps }) => {
   }, [name, password, loading])
 
   useEffect(() => {
-    if(error === 'Unauthorized') {
+    if (error === 'Unauthorized') {
       setNameErrorColor('green')
       setNameError('Пользователь с таким именем уже существует')
       setPasswordError('Неверный пароль. Проверьте правильность ввода или создайте новый аккаунт')
@@ -51,11 +51,11 @@ export const Form: React.FC<FormProps> = ({ className, ...otherProps }) => {
     setNameError('')
     setPasswordError('')
 
-    if(!isValidName(name) || !isValidPassword(password)) {
-      if(!isValidName(name)) {
+    if (!isValidName(name) || !isValidPassword(password)) {
+      if (!isValidName(name)) {
         setNameError('Имя не соответствует требованиям')
         setNameErrorColor('red')
-      } else if(isValidName(name)) {
+      } else if (isValidName(name)) {
         setNameError('Имя соответствует требованиям')
         setNameErrorColor('green')
       }
@@ -78,11 +78,11 @@ export const Form: React.FC<FormProps> = ({ className, ...otherProps }) => {
       return
     }
 
-    if(!isValidName(name) || !isValidPassword(password)) {
-      if(!isValidName(name)) {
+    if (!isValidName(name) || !isValidPassword(password)) {
+      if (!isValidName(name)) {
         setNameError('Имя не соответствует требованиям')
         setNameErrorColor('red')
-      } else if(isValidName(name)) {
+      } else if (isValidName(name)) {
         setNameError('Имя соответствует требованиям')
         setNameErrorColor('green')
       }
@@ -98,55 +98,55 @@ export const Form: React.FC<FormProps> = ({ className, ...otherProps }) => {
   const btnClue = useSystemHook(handleKeyPress)
 
   return (
-      <form className={clsx(styles.container, className)} {...otherProps}
-        onSubmit={handleSubmit}>
-        <img
-          className={styles.img}
-          src='/images/illustration1.png'
-          alt='Иллюстрация'
-        />
-        <h2 className={styles.title}>Добро пожаловать!</h2>
-        <Input
-          required
-          value={name}
-          setValue={setName}
-          onChange={(e) => {
-            setName(e.target.value)
-            setNameError('')
-          }}
-          className={styles.input}
-          label='Имя'
-          id='name'
-          tooltip='Имя должно начинаться с заглавной буквы, содержать 2-30 символов, без пробелов'
-          error={nameError}
-          colorError={nameErrorColor}
-        />
-        <Input
-          required
-          value={password}
-          setValue={setPassword}
-          onChange={(e) => {
-            setPassword(e.target.value)
-            setPasswordError('')
-          }}
-          className={styles.input}
-          id='password'
-          label='Пароль'
-          type='password'
-          tooltip='Пароль должен содержать 8-30 символов, без пробелов. Минимум 2 цифры и 3 заглавные буквы'
-          error={passwordError}
-        />
-        <Button
-          className={styles.submitBtn}
-          type='submit'
-          disabled={disabled}
-          tip={btnClue}
-        >
-          {loading
-            ? <Loader />
-            : 'Начать'
-           }
-        </Button>
-      </form>
+    <form className={cn(styles.container, className)} {...otherProps}
+      onSubmit={handleSubmit}>
+      <img
+        className={styles.img}
+        src='/images/illustration1.png'
+        alt='Иллюстрация'
+      />
+      <h2 className={styles.title}>Добро пожаловать!</h2>
+      <Input
+        required
+        value={name}
+        setValue={setName}
+        onChange={(e) => {
+          setName(e.target.value)
+          setNameError('')
+        }}
+        className={styles.input}
+        label='Имя'
+        id='name'
+        tooltip='Имя должно начинаться с заглавной буквы, содержать 2-30 символов, без пробелов'
+        error={nameError}
+        colorError={nameErrorColor}
+      />
+      <Input
+        required
+        value={password}
+        setValue={setPassword}
+        onChange={(e) => {
+          setPassword(e.target.value)
+          setPasswordError('')
+        }}
+        className={styles.input}
+        id='password'
+        label='Пароль'
+        type='password'
+        tooltip='Пароль должен содержать 8-30 символов, без пробелов. Минимум 2 цифры и 3 заглавные буквы'
+        error={passwordError}
+      />
+      <Button
+        className={styles.submitBtn}
+        type='submit'
+        disabled={disabled}
+        tip={btnClue}
+      >
+        {loading
+          ? <Loader />
+          : 'Начать'
+        }
+      </Button>
+    </form>
   );
 };
