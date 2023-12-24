@@ -1,0 +1,62 @@
+:root {
+  --light-theme-text-secondary-default: #909090;
+  --light-theme-text-disabled: #c2c2c2;
+}
+
+html[data-theme='light'] {
+  --white: #ffffff;
+  --both-theme-input-default: #05303d;
+
+  --light-theme-text-primary-default: #2d2d2d;
+  --light-theme-bg-primary-default: #fcfcfc;
+
+  --light-theme-text-secondary-elements: #fcfcfc;
+  --light-theme-text-secondary-default: #909090;
+
+  --light-theme-bg-primary-button-default: #ff9c46;
+  --light-theme-bg-primary-button: #ff9c46;
+  --light-theme-bg-primary-button-disable: #edd0b6;
+  --both-threme-input-error: #df4c25;
+  --both-threme-input-success: #2a8f55;
+
+  --light-card-footer: #2d2d2d;
+
+  --theme-check-color: #ffaa60;
+  --light-theme-text-disabled: #c2c2c2;
+  --linear-gradienta: linear-gradient(
+    45deg,
+    #125365 0% 39.55%,
+    #ff713f 39.55% 55%,
+    #ff9d46 55% 88.35%,
+    #ffca4a 88.35% 100%
+  );
+}
+
+html[data-theme='dark'] {
+  --white: #eeee;
+  --both-theme-input-default: #c3c3c3;
+
+  --light-theme-text-primary-default: #fcfcfc;
+  --light-theme-bg-primary-default: #2d2d2d;
+
+  --light-theme-text-secondary-elements: #2d2d2d;
+  --light-theme-text-secondary-default: #909090;
+
+  --light-theme-bg-primary-button-default: #ffaa60;
+  --light-theme-bg-primary-button: #ff9c46;
+  --light-theme-bg-primary-button-disable: #494644;
+  --both-threme-input-error: #df4c25;
+  --both-threme-input-success: #2a8f55;
+
+  --light-card-footer: #494644;
+
+  --theme-check-color: #ffaa60;
+  --light-theme-text-disabled: #c2c2c2;
+  --linear-gradienta: linear-gradient(
+    45deg,
+    #125365 0% 39.55%,
+    #ff713f 39.55% 55%,
+    #ff9d46 55% 88.35%,
+    #ffca4a 88.35% 100%
+  );
+}
