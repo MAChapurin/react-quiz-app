@@ -1,0 +1,30 @@
+.container {
+  padding: 15px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: backdrop-filter 0.5s ease;
+}
+
+body[data-theme='dark'] .container {
+  backdrop-filter: brightness(20%);
+}
+
+.ratingContainer {
+  width: 100px;
+}
+
+@media (max-width: 1279px) {
+  .container {
+    padding: 15px 5.511%;
+  }
+}
+
+@media (max-width: 743px) {
+  .container {
+    padding: 15px 2%;
+  }
+}

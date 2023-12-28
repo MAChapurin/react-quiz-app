@@ -22,7 +22,7 @@ interface ApiError {
 
 interface IThemesState {
   themes: ITheme[]
-  activeThemes: number[][]
+  activeThemes: Pick<ITheme, 'id' | 'name' | 'quizzes'>[]
   loading: boolean
   error: ApiError | null
 }
@@ -59,7 +59,7 @@ export const themesSlice = createSlice({
       state.activeThemes.push(action.payload)
     },
     removeTheme: (state, action) => {
-      state.activeThemes = state.activeThemes.filter(theme => theme.toString() !== action.payload.toString())
+      state.activeThemes = state.activeThemes.filter(theme => theme.id !== action.payload)
     }
   },
   extraReducers(builder) {
